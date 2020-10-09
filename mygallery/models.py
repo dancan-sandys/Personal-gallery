@@ -18,4 +18,26 @@ class Image(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,)
 
+    def save_image(self):
+        self.save()
 
+    def delete_image(self):
+        self.delete()
+
+    def update_image(self):
+        self.update()
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id = id )
+        return image
+
+    @classmethod
+    def search_image(cls, searchterm):
+        images = cls.objects.filter(category= searchterm)
+        return images
+
+    @classmethod
+    def filter_image(cls, category):
+        images = cls.objects.filter(category=category)
+        return images
