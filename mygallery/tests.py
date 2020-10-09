@@ -38,3 +38,13 @@ class ImageTestClass(TestCase):
         id = 1
         image = Image.get_image_by_id(id)
         self.assertTrue(len(image)==0)
+
+    def test_search_image(self):
+        Category = self.new_category
+        image = Image.search_image(Category)
+        self.assertTrue(len(image)==0)
+
+    def test_filter_image(self):
+        Category = self.new_category
+        image = Image.filter_image(Category)
+        self.assertTrue(len(image)==0)
