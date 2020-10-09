@@ -21,3 +21,20 @@ class ImageTestClass(TestCase):
         self.new_image.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images)>0)
+
+    def test_deleting(self):
+        self.new_image.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images)>0)
+        self.new_image.delete_image()
+        images = Image.objects.all()
+        self.assertEqual(len(images),0)
+
+    # def test_update(self):
+        
+    #     self.new_image.update_image(id = self.new_image.id ,name = 'Dancan'")
+
+    def test_get_image_by_id(self):
+        id = 1
+        image = Image.get_image_by_id(id)
+        self.assertTrue(len(image)==0)
