@@ -31,6 +31,7 @@ class Category(models.Model):
 class Image(models.Model):
 
     name = models.CharField(max_length=30)
+    image_url = models.CharField(max_length=60)
     description = models.CharField(max_length=30)
     date = models.DateField(auto_now_add=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
