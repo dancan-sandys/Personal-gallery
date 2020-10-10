@@ -1,5 +1,9 @@
 {%extends 'base.html'%}
 
 {%block content%}
-
+<div class="col-md-3">
+    <img src="{{image.image_url}}" alt="image">
+    <p>{{image.name}}</p>
+    <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em> </p>
+</div>
 {%endblock%}
