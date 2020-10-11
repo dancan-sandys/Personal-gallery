@@ -6,21 +6,122 @@
 <link rel="stylesheet" href="../static/css/gellery.css">
 
 {%endblock%}
-<div class="images">
-    {%for image in images%}
-    <div class="image">
-        <a href="/image/{{image.id}}">
-            <div class="img">
+<div class="category">
+    <h2>Category: Family</h2>
+    <div class="images">
+        {%for image in images%}
+        {%if image.category.name == "Family"%}
+        <div class="image">
+            <a href="/image/{{image.id}}">
+                <div class="img">
 
-                <img class="photo" src="{{image.image_url.url}}" alt="image">
-                <p>{{image.name}}</p>
-                <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em> </p>
-              
+                    <img class="photo" src="{{image.image_url.url}}" alt="image">
+                    <p>{{image.name}}</p>
+                    <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em>
+                    </p>
 
-            </div>
-        </a>
+
+                </div>
+            </a>
+        </div>
+
+        {%endif%}
+        {%endfor%}
     </div>
+</div>
 
-    {%endfor%}
+<div class="category">
+    <h2>Category: Food</h2>
+    <div class="images">
+        {%for image in images%}
+        {%if image.category.name == "Food"%}
+        <div class="image">
+            <a href="/image/{{image.id}}">
+                <div class="img">
+
+                    <img class="photo" src="{{image.image_url.url}}" alt="image">
+                    <p>{{image.name}}</p>
+                    <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em>
+                    </p>
+
+
+                </div>
+            </a>
+        </div>
+
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+
+<div class="category">
+    <h2>Category: Travel</h2>
+    <div class="images">
+        {%for image in images%}
+        {%if image.category.name == "Travel"%}
+        <div class="image">
+            <a href="/image/{{image.id}}">
+                <div class="img">
+
+                    <img class="photo" src="{{image.image_url.url}}" alt="image">
+                    <p>{{image.name}}</p>
+                    <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em>
+                    </p>
+
+
+                </div>
+            </a>
+        </div>
+
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+
+<div class="category">
+    <h2>Category: Work</h2>
+    <div class="images">
+        {%for image in images%}
+        {%if image.category.name == "Work"%}
+        <div class="image">
+            <a href="/image/{{image.id}}">
+                <div class="img">
+
+                    <img class="photo" src="{{image.image_url.url}}" alt="image">
+                    <p>{{image.name}}</p>
+                    <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em>
+                    </p>
+
+
+                </div>
+            </a>
+        </div>
+
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+<div class="category">
+    <h2>Category: Education</h2>
+    <div class="images">
+        {%for image in images%}
+        {%if image.category.name == "Education"%}
+        <div class="image">
+            <a href="/image/{{image.id}}">
+                <div class="img">
+
+                    <img class="photo" src="{{image.image_url.url}}" alt="image">
+                    <p>{{image.name}}</p>
+                    <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em>
+                    </p>
+
+
+                </div>
+            </a>
+        </div>
+
+        {%endif%}
+        {%endfor%}
+    </div>
 </div>
 {%endblock%}
