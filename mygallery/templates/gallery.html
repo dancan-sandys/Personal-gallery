@@ -5,10 +5,10 @@
 <a href="/image/{{image.id}}">
 <div class="col-md-3">
     
-    <img src="{{image.image_url}}" alt="image">
+    <img src="{{image.image_url.url}}" alt="image">
     <p>{{image.name}}</p> 
     <p>Taken on <em>{{image.date}}</em> at <em>{{image.location.city}},{{image.location.country}}</em> </p> 
-   
+   <p>{{image.image_url}}</p>
 
 </div>
 </a>

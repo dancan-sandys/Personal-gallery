@@ -31,7 +31,7 @@ class Category(models.Model):
 class Image(models.Model):
 
     name = models.CharField(max_length=30)
-    image_url = models.CharField(max_length=60)
+    image_url = models.ImageField(upload_to = 'galleries/')
     description = models.CharField(max_length=30)
     date = models.DateField(auto_now_add=True)
     location = models.ForeignKey(Location, on_delete=models.CASCADE,)
@@ -54,10 +54,10 @@ class Image(models.Model):
 
     @classmethod
     def search_image(cls, searchterm):
-        images = cls.objects.filter(category= searchterm)
+        images = cls.objects.filter(category__icontains = searchterm)
         return images
 
     @classmethod
     def filter_image(cls, category):
         images = cls.objects.filter(category=category)
-        return images
+        return imag

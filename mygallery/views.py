@@ -33,6 +33,23 @@ def category(request, id):
 
     try:
         category = Category.objects.get(id =id)
-
+        images = Image.objects.get(category=category)
     except:
         raise Http404()
+
+    return render(request,'category.html', {"category": category})
+
+
+def search_results(request):
+
+    if category in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_images = Image.search_image(search_term = search_term)
+        category = f"{search_term}"
+
+        return render(request, "search.html", {"category":category, "images": searched_images})
+
+    else:
+        category = "the category you entered is not available"
+
+        return render(request, "search.html", {"category":category})
