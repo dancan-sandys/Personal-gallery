@@ -42,14 +42,15 @@ def category(request, id):
 
 def search_results(request):
 
-    if category in request.GET and request.GET["category"]:
+    if 'category' in request.GET and request.GET["category"]:
         search_term = request.GET.get("category")
-        searched_images = Image.search_image(search_term = search_term)
-        category = f"{search_term}"
+        category_searched = Category.objects.get(name = search_term)
+        images = Image.objects.filter(category=category_searched)
+        message = f"{search_term}"
 
-        return render(request, "search.html", {"category":category, "images": searched_images})
+        return render(request, "search.html", {"message":message, "category": category_searched, "images":images})
 
     else:
-        category = "the category you entered is not available"
+        message = "the category you entered is not available"
 
-        return render(request, "search.html", {"category":category})
+        return render(request, "search.html", {"message":message})
