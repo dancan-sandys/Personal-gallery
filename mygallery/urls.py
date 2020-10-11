@@ -8,8 +8,9 @@ urlpatterns = [
     url(r'^categories/$', views.categories, name='categories'),
     url(r'^image/(\d+)', views.image, name='image'),
     url(r'^category/(\d+)', views.category, name='category'),
-    url(r'^search/$', views.search_results, name='search_results')
-
+    url(r'^search/$', views.search_results, name='search_results'),
+    url(r'^locations/$', views.image_locations, name='image_locations'),
+    url(r'^copy/(\d+)', views.copy, name='copy')
 ]
 
 if settings.DEBUG:
