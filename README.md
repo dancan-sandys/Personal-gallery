@@ -10,7 +10,7 @@
 ## Description
 This app allows a user to view an array of images from different categories and the location and time the images were taken.
 ## live link
-https://sandysblogs.herokuapp.com/
+https://sandysgallery.herokuapp.com/
 
 ## Pre-requisite necesities to run the app
 
