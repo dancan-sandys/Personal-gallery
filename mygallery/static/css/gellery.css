@@ -29,3 +29,12 @@ body{
 .col-md-4{
     width: 100%;
 }
+
+h2{
+    text-align: center;
+    font-style: italic;
+}
+
+a{
+    color: black;
+}
