@@ -44,11 +44,21 @@ def search_results(request):
 
     if 'category' in request.GET and request.GET["category"]:
         search_term = request.GET.get("category").capitalize()
-        category_searched = Category.objects.get(name = search_term)
-        images = Image.objects.filter(category=category_searched)
-        message = f"{search_term}"
+        
+        try:
+            category_searched = Category.objects.get(name = search_term)
 
-        return render(request, "search.html", {"message":message, "category": category_searched, "images":images})
+            images = Image.objects.filter(category=category_searched)
+            message = f"{search_term}"
+    
+            return render(request, "search.html", {"message":message, "category": category_searched, "images":images})
+
+
+        except:
+            default = "The category you entered does not exist"
+
+            return render(request, "search.html", {"default":default})
+
 
     else:
         message = "the category you entered is not available"

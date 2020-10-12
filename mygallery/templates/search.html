@@ -7,8 +7,12 @@
 <link rel="stylesheet" href="../static/css/gellery.css">
 
 {%endblock%}
+{%if images %}
 
 <p class="message">The images in the <strong><em>{{category.name}}</em></strong> category include: </p>
+{% else %}
+<p class="message">{{default}}</p>
+{%endif%}
 <div class="images">
     {%for image in images%}
     <div class="image">
